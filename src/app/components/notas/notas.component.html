@@ -1,0 +1,56 @@
+<p id="titulo">Mis Notas</p>
+<table>
+    <tr *ngFor="let item of listaNotas">
+        
+        <td *ngIf="item.estado==='abierto'"> 
+            
+            <div  class='cajasEstado' >
+                <div id="cajaAbierto">
+                    <button id="x" type="submit" (click)="eliminar()">X</button>
+                    <p id="titulo">{{item.titulo}}
+                        
+                    </p>
+                    <p>{{item.descripcion}}</p>
+                </div>
+                
+            </div> 
+            
+        </td>
+        
+        <td *ngIf="item.estado==='en proceso'"> 
+            
+            <div  class='cajasEstado'>
+                <div id="cajaEnProceso">
+                    <button id="x" type="submit" (click)="eliminar()">X</button>
+                    <p id="titulo">{{item.titulo}}
+                        
+                    </p>
+                    <p>{{item.descripcion}}</p>
+                </div>
+            </div> 
+            
+        </td>
+        
+        <td *ngIf="item.estado==='cerrado'"> 
+            
+            <div  class='cajasEstado'>
+                <div id="cajaCerrado">
+                    <button id="x" type="submit" (click)="eliminar()">X</button>
+                    <p id="titulo">{{item.titulo}}
+                        
+                    </p>
+                    <p>{{item.descripcion}}</p>
+                </div>
+            </div> 
+            
+        </td>
+        
+    <tr>
+    
+</table>
+
+<div id="cajaBoton">
+    <a [routerLink]="['../']" routerLinkActive="router-link-active" >
+        <button id="adicionar" type="button" class="btn btn-primary">+ Adicionar</button>
+    </a>
+</div>

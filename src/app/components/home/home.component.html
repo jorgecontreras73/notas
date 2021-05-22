@@ -1,0 +1,25 @@
+<form [formGroup]="home">
+    <div class="mb-3">
+        <p>Título</p>
+        <input type="text" formControlName="titulo" class="form-control" id="exampleFormControlInput1" placeholder="Nota" required minlength="1">
+    </div>
+        
+    <p>Estado</p>
+    <select class="form-select" formControlName="estado" aria-label="Default select example" required>
+        <option value="abierto">abierto</option>
+        <option value="en proceso">en proceso</option>
+        <option value="cerrado">cerrado</option>
+    </select>
+
+    <div class="mb-3">
+        <p>Descripción</p>
+        <textarea class="form-control" formControlName="descripcion" id="exampleFormControlTextarea1" rows="3" maxlength="150" required></textarea>
+    </div>
+    
+    <a [routerLink]="['/notas']" routerLinkActive="router-link-active">
+        <button type="submit" (click)="EnviarDatos()">Actualizar</button>
+    </a>
+    
+</form>
+
+
